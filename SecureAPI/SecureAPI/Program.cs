@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opt =>
     {
-        opt.Audience = Configuration["AAD:ResourceId"];
-        opt.Authority = $"{Configuration["AAD:InstanceId"]}{Configuration["ADD:TenantId"]}";
+        opt.Audience = builder.Configuration["AAD:ResourceId"];
+        opt.Authority = $"{builder.Configuration["AAD:InstanceId"]}{builder.Configuration["ADD:TenantId"]}";
     });
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
