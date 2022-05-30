@@ -1,12 +1,12 @@
 using AutoMapper;
-using Commander.Dtos;
-using Commander.Models;
+using CommanderNETS.Dtos;
+using CommanderNETS.Models;
 
-namespace Commander.Profiles
+namespace CommanderNETS.Profiles
 {
-    public class CommandsProfile : Profile
+    public class CommandsProfiles : Profile
     {
-        public CommandsProfile()
+        public CommandsProfiles()
         {
             //Source -> Target
             CreateMap<Command, CommandReadDto>().ReverseMap();
